@@ -23,3 +23,5 @@
  * Text Domain:       shortcode-form
  * Domain Path:       /languages
  */
+
+defined('ABSPATH') or die('You can not access here.');

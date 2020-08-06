@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 - Drop database on plugin uninstall
 - Enqueue class
 - Enqueue admin scripts and styles
-- Enqueue public scripts and styles
+- Enqueue public scripts and styles 
 
 ### Changed
 - 

@@ -25,6 +25,9 @@ All notable changes to this project will be documented in this file.
 ### Bugs
 -
 
+### To proceed
+-
+
 #####################################################################
 
 ## [1.0.0] - 2020-08-06
@@ -38,6 +41,8 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Prefix from Sf to Sfc
 - Changed structure. Moved Admin and Public into includes
+- ScfFunctions class
+- sendToDatabase() method
 
 ### Removed
 -
@@ -47,5 +52,8 @@ All notable changes to this project will be documented in this file.
 
 ### Bugs
 -
+
+### To proceed
+- Proceed with sendToDatabase() method for sending value to the database with AJAX
 
 #####################################################################

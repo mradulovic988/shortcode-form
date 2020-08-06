@@ -11,6 +11,8 @@
 
 namespace Inc;
 
+use Inc\Base\ScfFunctions;
+
 /**
  * SfInit initialization class
  *
@@ -53,7 +55,8 @@ if ( !class_exists( 'ScfInit' ) ) {
                 Base\ScfActivate::class,
                 Base\ScfEnqueue::class,
                 Pages\ScfAdmin::class,
-	            Base\ScfShortcodes::class
+	            Base\ScfShortcodes::class,
+	            Base\ScfFunctions::class
             ];
         }
 

@@ -11,6 +11,8 @@
 
 namespace Inc\Base;
 
+use Inc\Base\ScfFunctions;
+
 if ( !class_exists( 'ScfShortcodes' ) ) {
 
 	/**
@@ -21,7 +23,7 @@ if ( !class_exists( 'ScfShortcodes' ) ) {
 	 * @package    ScfShortcodes
 	 * @author     Marko Radulovic <mradulovic988@gmail.com>
 	 */
-	class ScfShortcodes {
+	class ScfShortcodes extends ScfFunctions {
 
 		public function __construct()
 		{
@@ -67,7 +69,7 @@ if ( !class_exists( 'ScfShortcodes' ) ) {
 			$form .= '<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '">';
 
 			$form .= '<label for="ScflastName">' . __( 'Last Name', 'shortcode-form' ) . '</label>';
-			$form .= '<input type="text" name="ScflastName" id="ScflastName" class="ScflastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '">';
+			$form .= '<input type="text" name="ScfLastName" id="ScfLastName" class="ScfLastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '">';
 
 			$form .= '<label for="ScfEmail">' . __( 'Email', 'shortcode-form' ) . '</label>';
 			$form .= '<input type="email" name="ScfEmail" id="ScfEmail" class="ScfEmail" value="' . $this->loggedInUser( 'user_email' ) . '" placeholder="' . __( 'Email', 'shortcode-form' ) . '">';
@@ -81,7 +83,11 @@ if ( !class_exists( 'ScfShortcodes' ) ) {
 			$form .= '<label for="ScfSubmit"></label>';
 			$form .= '<input type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit" placeholder="' . __( 'Submit', 'shortcode-form' ) . '">';
 
+			$form .= '<div id="showMessage"></div>';
+
 			$form .= '</form>';
+
+			$this->sendToDatabase();
 
 			return $form;
 		}

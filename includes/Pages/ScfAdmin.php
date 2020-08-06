@@ -29,7 +29,7 @@ if ( !class_exists( 'ScfAdmin' ) ) {
         }
 
         /**
-         * Creating menu pages on admin side
+         * Creating menu pages on Admin side
          *
          * @package     addAdminPages
          * @author      Marko Radulovic <mradulovic988@gmail.com>

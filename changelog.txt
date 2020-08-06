@@ -32,10 +32,12 @@ All notable changes to this project will be documented in this file.
 - Shortcode Form admin menu page
 - Users list admin page
 - Shortcode Example admin page
--
+- [form_inquiry] Shortcode for the frontend form
+- Created method loggedInUser() for checking and pulling automaticly user information
 
 ### Changed
 - Prefix from Sf to Sfc
+- Changed structure. Moved Admin and Public into includes
 
 ### Removed
 -

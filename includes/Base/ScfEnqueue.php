@@ -37,8 +37,8 @@ if ( !class_exists( 'ScfEnqueue' ) ) {
          */
         public function enqueueAdmin()
         {
-            wp_enqueue_style( 'style', plugins_url( '../../admin/css/styleAdmin.css', __FILE__ ) );
-            wp_enqueue_script( 'script', plugins_url( '../../admin/js/scriptAdmin.js', __FILE__ ) );
+            wp_enqueue_style( 'style', plugins_url( '../Admin/css/styleAdmin.css', __FILE__ ) );
+            wp_enqueue_script( 'script', plugins_url( '../Admin/js/scriptAdmin.js', __FILE__ ) );
         }
 
         /**
@@ -49,8 +49,8 @@ if ( !class_exists( 'ScfEnqueue' ) ) {
          */
         public function enqueuePublic()
         {
-            wp_enqueue_style( 'style', plugins_url( '../../public/css/stylePublic.css', __FILE__ ) );
-            wp_enqueue_script( 'script', plugins_url( '../../public/js/scriptPublic.js', __FILE__ ) );
+            wp_enqueue_style( 'style', plugins_url( '../Public/css/stylePublic.css', __FILE__ ) );
+            wp_enqueue_script( 'script', plugins_url( '../Public/js/scriptPublic.js', __FILE__ ) );
         }
 
     }

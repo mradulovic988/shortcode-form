@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package    shortcode-form
- * @subpackage shortcode-form/public
+ * @subpackage shortcode-form/Public
  */
 
 namespace Inc;
@@ -17,7 +17,7 @@ namespace Inc;
  * Execute all class inside include folder
  *
  * @package    ScfInit
- * @subpackage shortcode-form/public
+ * @subpackage shortcode-form/Public
  * @author     Marko <mradulovic988@gmail.com>
  */
 if ( !class_exists( 'ScfInit' ) ) {
@@ -52,7 +52,8 @@ if ( !class_exists( 'ScfInit' ) ) {
             return [
                 Base\ScfActivate::class,
                 Base\ScfEnqueue::class,
-                Pages\ScfAdmin::class
+                Pages\ScfAdmin::class,
+	            Base\ScfShortcodes::class
             ];
         }
 

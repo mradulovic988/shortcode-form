@@ -3,7 +3,7 @@
  * The plugin bootstrap file
  *
  * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
+ * Admin area. This file also includes all of the dependencies used by the plugin,
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Shortcode Form
  * Plugin URI:        www.samplelink.com
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This is a short description of what the plugin does. It's displayed in the WordPress Admin area.
  * Version:           1.0.0
  * Author:            Marko Radulovic <mradulovic988@gmail.com>
  * Author URI:        www.samplelink.com

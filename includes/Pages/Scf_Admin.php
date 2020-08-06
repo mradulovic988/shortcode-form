@@ -5,23 +5,23 @@
  * @link       www.samplelink.com
  * @since      1.0.0
  *
- * @package    ScfAdmin
+ * @package    Inc\Pages
  * @author     Marko Radulovic <mradulovic988@gmail.com>
  */
 
 namespace Inc\Pages;
 
-if ( !class_exists( 'ScfAdmin' ) ) {
+if ( !class_exists( 'Scf_Admin' ) ) {
 
     /**
      * ScfAdmin class
      *
      * Class where we add all of the admins page
      *
-     * @package    ScfAdmin
+     * @package    Scf_Admin
      * @author     Marko Radulovic <mradulovic988@gmail.com>
      */
-    class ScfAdmin
+    class Scf_Admin
     {
         public function __construct()
         {

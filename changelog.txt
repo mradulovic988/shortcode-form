@@ -39,10 +39,11 @@ All notable changes to this project will be documented in this file.
 - Created method loggedInUser() for checking and pulling automaticly user information
 
 ### Changed
-- Prefix from Sf to Sfc
+- Prefix from Sf to Scf
 - Changed structure. Moved Admin and Public into includes
 - ScfFunctions class
 - sendToDatabase() method
+- Prefix from Scf to Scf_
 
 ### Removed
 -

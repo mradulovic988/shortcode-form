@@ -5,24 +5,22 @@
  * @link       www.samplelink.com
  * @since      1.0.0
  *
- * @package    shortcode-form
+ * @package    Inc
  * @subpackage shortcode-form/Public
  */
 
 namespace Inc;
-
-use Inc\Base\ScfFunctions;
 
 /**
  * SfInit initialization class
  *
  * Execute all class inside include folder
  *
- * @package    ScfInit
+ * @package    Scf_Init
  * @subpackage shortcode-form/Public
  * @author     Marko <mradulovic988@gmail.com>
  */
-if ( !class_exists( 'ScfInit' ) ) {
+if ( !class_exists( 'Scf_Init' ) ) {
 
     /**
      * SfInit final class to initialize code
@@ -32,7 +30,7 @@ if ( !class_exists( 'ScfInit' ) ) {
      * @package    SfInit
      * @author     Marko Radulovic <mradulovic988@gmail.com>
      */
-    final class ScfInit
+    final class Scf_Init
     {
 
         /**
@@ -52,11 +50,11 @@ if ( !class_exists( 'ScfInit' ) ) {
         public static function getServices()
         {
             return [
-                Base\ScfActivate::class,
-                Base\ScfEnqueue::class,
-                Pages\ScfAdmin::class,
-	            Base\ScfShortcodes::class,
-	            Base\ScfFunctions::class
+                Base\Scf_Activate::class,
+                Base\Scf_Enqueue::class,
+                Pages\Scf_Admin::class,
+	            Base\Scf_Shortcodes::class,
+	            Base\Scf_Functions::class
             ];
         }
 

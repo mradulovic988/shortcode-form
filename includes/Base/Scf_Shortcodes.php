@@ -5,25 +5,25 @@
  * @link       www.samplelink.com
  * @since      1.0.0
  *
- * @package    ScfShortcodes
+ * @package    Inc\Base
  * @author     Marko Radulovic <mradulovic988@gmail.com>
  */
 
 namespace Inc\Base;
 
-use Inc\Base\ScfFunctions;
+use Inc\Base\Scf_Functions;
 
-if ( !class_exists( 'ScfShortcodes' ) ) {
+if ( !class_exists( 'Scf_Shortcodes' ) ) {
 
 	/**
 	 * ScfShortcodes class
 	 *
 	 * Class where we set all of the shortcodes
 	 *
-	 * @package    ScfShortcodes
+	 * @package    Scf_Shortcodes
 	 * @author     Marko Radulovic <mradulovic988@gmail.com>
 	 */
-	class ScfShortcodes extends ScfFunctions {
+	class Scf_Shortcodes extends Scf_Functions {
 
 		public function __construct()
 		{

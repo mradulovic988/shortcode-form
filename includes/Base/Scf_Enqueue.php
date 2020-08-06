@@ -5,23 +5,23 @@
  * @link       www.samplelink.com
  * @since      1.0.0
  *
- * @package    ScfEnqueue
+ * @package    Inc\Base
  * @author     Marko Radulovic <mradulovic988@gmail.com>
  */
 
 namespace Inc\Base;
 
-if ( !class_exists( 'ScfEnqueue' ) ) {
+if ( !class_exists( 'Scf_Enqueue' ) ) {
 
     /**
-     * ScfEnqueue class
+     * Scf_Enqueue class
      *
      * Class where we enque all scripts and styles
      *
-     * @package    ScfEnqueue
+     * @package    Scf_Enqueue
      * @author     Marko Radulovic <mradulovic988@gmail.com>
      */
-    class ScfEnqueue
+    class Scf_Enqueue
     {
         public function __construct()
         {

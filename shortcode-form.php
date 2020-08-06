@@ -46,8 +46,8 @@ define( 'PLUGIN', plugin_basename( __FILE__ ) );
 if ( !function_exists( 'activate' ) ) {
     function activate()
     {
-        Inc\Base\ScfActivate::activate();
-        Inc\Base\ScfActivate::createDatabaseTable();
+        Inc\Base\Scf_Activate::activate();
+        Inc\Base\Scf_Activate::createDatabaseTable();
     }
 }
 
@@ -65,6 +65,6 @@ register_deactivation_hook( __FILE__, 'deactivate' );
 /**
  * Initialize all the core classes of the plugin
  */
-if ( class_exists( 'Inc\\ScfInit' ) ) {
-	Inc\ScfInit::registerServices();
+if ( class_exists( 'Inc\\Scf_Init' ) ) {
+	Inc\Scf_Init::registerServices();
 }

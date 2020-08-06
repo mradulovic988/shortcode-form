@@ -5,23 +5,23 @@
  * @link       www.samplelink.com
  * @since      1.0.0
  *
- * @package    ScfActivate
+ * @package    Inc\Base
  * @author     Marko Radulovic <mradulovic988@gmail.com>
  */
 
 namespace Inc\Base;
 
-if ( !class_exists( 'ScfActivate' ) ) {
+if ( !class_exists( 'Scf_Activate' ) ) {
 
     /**
      * SfActivate activation class
      *
      * Activation plugin
      *
-     * @package    SfActivate
+     * @package    Scf_Activate
      * @author     Marko Radulovic <mradulovic988@gmail.com>
      */
-    class ScfActivate
+    class Scf_Activate
     {
 
         /**

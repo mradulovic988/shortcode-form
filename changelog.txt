@@ -1,0 +1,28 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [1.0.0] - 2020-08-05
+### Added
+- Created Private Git Repo
+- Created structure for plugin
+- Include composer - autoload
+- Create activation and deactivation hook
+- Created uninstall file
+- Drop database on plugin uninstall
+- Enqueue class
+- Enqueue admin scripts and styles
+- Enqueue public scripts and styles
+
+### Changed
+- 
+
+### Removed
+- 
+
+### Fixed
+-
+
+### Bugs
+-
+
+#####################################################################

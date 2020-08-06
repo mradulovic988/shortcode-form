@@ -1,0 +1,19 @@
+{
+    "name": "mradu/shortcode-form",
+    "description": "Test plugin for Codeable project",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Marko Radulovic",
+            "email": "mradulovic988@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./includes"
+        }
+    }
+}

@@ -5,23 +5,23 @@
  * @link       www.samplelink.com
  * @since      1.0.0
  *
- * @package    SfEnqueue
+ * @package    ScfEnqueue
  * @author     Marko Radulovic <mradulovic988@gmail.com>
  */
 
 namespace Inc\Base;
 
-if ( !class_exists( 'SfEnqueue' ) ) {
+if ( !class_exists( 'ScfEnqueue' ) ) {
 
     /**
-     * SfEnqueue class
+     * ScfEnqueue class
      *
      * Class where we enque all scripts and styles
      *
-     * @package    SfEnqueue
+     * @package    ScfEnqueue
      * @author     Marko Radulovic <mradulovic988@gmail.com>
      */
-    class SfEnqueue
+    class ScfEnqueue
     {
         public function __construct()
         {
@@ -37,8 +37,8 @@ if ( !class_exists( 'SfEnqueue' ) ) {
          */
         public function enqueueAdmin()
         {
-            wp_enqueue_style( 'style', plugins_url( '../../admin/css/style.css', __FILE__ ) );
-            wp_enqueue_script( 'script', plugins_url( '../../admin/js/script.js', __FILE__ ) );
+            wp_enqueue_style( 'style', plugins_url( '../../admin/css/styleAdmin.css', __FILE__ ) );
+            wp_enqueue_script( 'script', plugins_url( '../../admin/js/scriptAdmin.js', __FILE__ ) );
         }
 
         /**
@@ -49,8 +49,8 @@ if ( !class_exists( 'SfEnqueue' ) ) {
          */
         public function enqueuePublic()
         {
-            wp_enqueue_style( 'style', plugins_url( '../../public/css/style.css', __FILE__ ) );
-            wp_enqueue_script( 'script', plugins_url( '../../public/js/script.js', __FILE__ ) );
+            wp_enqueue_style( 'style', plugins_url( '../../public/css/stylePublic.css', __FILE__ ) );
+            wp_enqueue_script( 'script', plugins_url( '../../public/js/scriptPublic.js', __FILE__ ) );
         }
 
     }

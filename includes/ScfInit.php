@@ -16,11 +16,11 @@ namespace Inc;
  *
  * Execute all class inside include folder
  *
- * @package    shortcode-form
+ * @package    ScfInit
  * @subpackage shortcode-form/public
  * @author     Marko <mradulovic988@gmail.com>
  */
-if ( !class_exists( 'SfInit' ) ) {
+if ( !class_exists( 'ScfInit' ) ) {
 
     /**
      * SfInit final class to initialize code
@@ -30,7 +30,7 @@ if ( !class_exists( 'SfInit' ) ) {
      * @package    SfInit
      * @author     Marko Radulovic <mradulovic988@gmail.com>
      */
-    final class SfInit
+    final class ScfInit
     {
 
         /**
@@ -50,8 +50,9 @@ if ( !class_exists( 'SfInit' ) ) {
         public static function getServices()
         {
             return [
-                Base\SfActivate::class,
-                Base\SfEnqueue::class
+                Base\ScfActivate::class,
+                Base\ScfEnqueue::class,
+                Pages\ScfAdmin::class
             ];
         }
 

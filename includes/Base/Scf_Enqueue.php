@@ -51,6 +51,8 @@ if ( !class_exists( 'Scf_Enqueue' ) ) {
         {
             wp_enqueue_style( 'style', plugins_url( '../Public/css/stylePublic.css', __FILE__ ) );
             wp_enqueue_script( 'script', plugins_url( '../Public/js/scriptPublic.js', __FILE__ ) );
+	        wp_register_script( 'jqueryPublic', plugins_url( '../Public/js/jqueryPublic.js', __FILE__ ), [ 'jquery' ] );
+	        wp_enqueue_script( 'jqueryPublic', plugins_url( '../Public/js/jqueryPublic.js', __FILE__ ), [ 'jquery' ] );
         }
 
     }

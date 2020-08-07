@@ -27,7 +27,8 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 
 		public function __construct()
 		{
-			add_shortcode( 'form_inquiry', [ $this, 'ScfForm' ]);
+			add_shortcode( 'form_inquiry', [ $this, 'ScfForm' ] );
+			$this->sendToDatabase();
 		}
 
 		/**
@@ -63,7 +64,7 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		public function ScfForm()
 		{
 			$form = '<h4>' . __( 'Submit your feedback', 'shortcode-form' ) . '</h4>';
-			$form .= '<form method="post" id="ScfForm">';
+			$form .= '<form id="ScfForm" action="" method="post" enctype="multipart/form-data">';
 
 			$form .= '<label for="ScfFirstName">' . __( 'First Name', 'shortcode-form' ) . '</label>';
 			$form .= '<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '">';
@@ -81,15 +82,52 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 			$form .= '<textarea id="ScfMessage" name="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '"></textarea>';
 
 			$form .= '<label for="ScfSubmit"></label>';
-			$form .= '<input type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit" placeholder="' . __( 'Submit', 'shortcode-form' ) . '">';
+			$form .= '<button type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit">' . __( 'Submit', 'shortcode-form' ) . '</button>';
 
-			$form .= '<div id="showMessage"></div>';
+			$form .= '<div id="#mail-status"></div>';
 
 			$form .= '</form>';
 
-			$this->sendToDatabase();
-
 			return $form;
 		}
+
+		/**
+		 * Sending data from the form inquiry
+		 * to the database table
+		 *
+		 * @package                 sendToDatabase
+		 * @author                  Marko Radulovic <mradulovic988@gmail.com>
+		 * @param string $table     Checking the database table
+		 * @param array $data       Collecting all of the information from the form inqury
+		 */
+		public function sendToDatabase()
+		{
+			if ( isset( $_POST[ 'ScfSubmit' ] ) ) {
+
+				global $wpdb;
+
+				$ScfFirstName = $_POST['ScfFirstName'];
+                $ScfLastName = $_POST['ScfLastName'];
+                $ScfEmail = $_POST['ScfEmail'];
+                $ScfSubject = $_POST['ScfSubject'];
+                $ScfMessage = $_POST['ScfMessage'];
+
+                $table = $wpdb->prefix.'shortcode_form';
+
+                $data = [
+                	'first_name' => $ScfFirstName,
+	                'last_name' => $ScfLastName,
+	                'email' => $ScfEmail,
+	                'subject' => $ScfSubject,
+	                'message' => $ScfMessage
+                ];
+
+                $format = [ '%s', '%s', '%s', '%s', '%s' ];
+                $wpdb->insert( $table, $data, $format );
+                $wpdb->insert_id;
+			}
+		}
+
+
 	}
 }

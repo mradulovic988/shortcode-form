@@ -23,25 +23,7 @@ if ( !class_exists( 'Scf_Functions' ) ) {
 	 */
 	class Scf_Functions {
 
-		/**
-		 * Sending data to the database
-		 *
-		 * @package    sendToDatabase
-		 * @author     Marko Radulovic <mradulovic988@gmail.com>
-		 */
-		public function sendToDatabase()
-		{
-			if ( isset( $_POST[ 'ScfSubmit' ] ) ) {
 
-				$fistName   = $_POST[ 'ScfFirstName' ] . '<br>';
-				$lastName   = $_POST[ 'ScfLastName' ] . '<br>';
-				$email      = $_POST[ 'ScfEmail' ] . '<br>';
-				$subject    = $_POST[ 'ScfSubject' ] . '<br>';
-				$message    = $_POST[ 'ScfMessage' ] . '<br>';
-
-
-			}
-		}
 
 	}
 }

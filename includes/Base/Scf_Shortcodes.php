@@ -11,8 +11,6 @@
 
 namespace Inc\Base;
 
-use Inc\Base\Scf_Functions;
-
 if ( !class_exists( 'Scf_Shortcodes' ) ) {
 
 	/**
@@ -23,7 +21,7 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 	 * @package    Scf_Shortcodes
 	 * @author     Marko Radulovic <mradulovic988@gmail.com>
 	 */
-	class Scf_Shortcodes extends Scf_Functions {
+	class Scf_Shortcodes {
 
 		public function __construct()
 		{
@@ -36,10 +34,10 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		 * if so, pulling the user data and automatically
 		 * fill First Name, Last Name and Email fields
 		 *
-		 * @package    loggedInUser
-		 * @author     Marko Radulovic <mradulovic988@gmail.com>
-		 * @param string $logged User object
-		 * @param string $userParam User parametar from the user object
+		 * @package         loggedInUser
+		 * @author          Marko Radulovic <mradulovic988@gmail.com>
+		 * @param string    $logged User object
+		 * @param string    $userParam User parametar from the user object
 		 * @return string
 		 */
 		public function loggedInUser( $userParam )

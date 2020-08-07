@@ -63,12 +63,16 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Send the data to database
 - Created method sendToDatabase()
+- Created method collectData() for collection data from the database
+- Finished page for Shortcodes example
+- Finished page for Users list
 
 ### Changed
 -
 
 ### Removed
--
+- Deleted template-parts from Admin and Public folder
+- Scf_Shortcodes class extends Scf_Function
 
 ### Fixed
 -

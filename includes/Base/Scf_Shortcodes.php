@@ -11,6 +11,8 @@
 
 namespace Inc\Base;
 
+use Inc\Base\Scf_Functions;
+
 if ( !class_exists( 'Scf_Shortcodes' ) ) {
 
 	/**
@@ -21,7 +23,7 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 	 * @package    Scf_Shortcodes
 	 * @author     Marko Radulovic <mradulovic988@gmail.com>
 	 */
-	class Scf_Shortcodes {
+	class Scf_Shortcodes extends Scf_Functions {
 
 		public function __construct()
 		{
@@ -61,32 +63,33 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		 */
 		public function ScfForm()
 		{
-			$form = '<h4>' . __( 'Submit your feedback', 'shortcode-form' ) . '</h4>';
-			$form .= '<form id="ScfForm" action="" method="post" enctype="multipart/form-data">';
-
-			$form .= '<label for="ScfFirstName">' . __( 'First Name', 'shortcode-form' ) . '</label>';
-			$form .= '<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '">';
-
-			$form .= '<label for="ScflastName">' . __( 'Last Name', 'shortcode-form' ) . '</label>';
-			$form .= '<input type="text" name="ScfLastName" id="ScfLastName" class="ScfLastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '">';
-
-			$form .= '<label for="ScfEmail">' . __( 'Email', 'shortcode-form' ) . '</label>';
-			$form .= '<input type="email" name="ScfEmail" id="ScfEmail" class="ScfEmail" value="' . $this->loggedInUser( 'user_email' ) . '" placeholder="' . __( 'Email', 'shortcode-form' ) . '">';
-
-			$form .= '<label for="ScfSubject">' . __( 'Subject', 'shortcode-form' ) . '</label>';
-			$form .= '<input type="text" name="ScfSubject" id="ScfSubject" class="ScfSubject" placeholder="' . __( 'Subject', 'shortcode-form' ) . '">';
-
-			$form .= '<label for="ScfMessage">' . __( 'Message', 'shortcode-form' ) . '</label>';
-			$form .= '<textarea id="ScfMessage" name="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '"></textarea>';
-
-			$form .= '<label for="ScfSubmit"></label>';
-			$form .= '<button type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit">' . __( 'Submit', 'shortcode-form' ) . '</button>';
-
-			$form .= '<div id="#mail-status"></div>';
-
-			$form .= '</form>';
-
-			return $form;
+			return '<h4>' . __( 'Submit your feedback', 'shortcode-form' ) . '</h4>
+				<form id="ScfForm" method="post" name="ScfForm" enctype="multipart/form-data" target="iframe">
+	
+				<label for="ScfFirstName">' . __( 'First Name', 'shortcode-form' ) . '</label><span id="firstName-info" class="info"></span>
+				<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '" required>
+				<label for="ScflastName">' . __( 'Last Name', 'shortcode-form' ) . '</label><span id="lastName-info" class="info"></span>
+				<input type="text" name="ScfLastName" id="ScfLastName" class="ScfLastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '" required>
+	
+				<label for="ScfEmail">' . __( 'Email', 'shortcode-form' ) . '</label><span id="email-info" class="info"></span>
+				<input type="email" name="ScfEmail" id="ScfEmail" class="ScfEmail" value="' . $this->loggedInUser( 'user_email' ) . '" placeholder="' . __( 'Email', 'shortcode-form' ) . '" required>
+	
+				<label for="ScfSubject">' . __( 'Subject', 'shortcode-form' ) . '</label><span id="subject-info" class="info"></span>
+				<input type="text" name="ScfSubject" id="ScfSubject" class="ScfSubject" placeholder="' . __( 'Subject', 'shortcode-form' ) . '" required>
+	
+				<label for="ScfMessage">' . __( 'Message', 'shortcode-form' ) . '</label><span id="message-info" class="info"></span>
+				<textarea id="ScfMessage" name="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '" required></textarea>
+	
+				<label for="ScfSubmit"></label>
+				<div class="buttonGif">
+				<button type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit">' . __( 'Submit', 'shortcode-form' ) . '</button>
+				<img class="ajax-loader" src="'.plugins_url( '../Public/images/loading.gif', __FILE__ ).'"/>
+				</div>
+				
+				<div id="showMessage"></div>
+	
+				</form>
+				<iframe name="iframe" id="iframe" style="display:none" ></iframe>';
 		}
 
 		/**
@@ -124,6 +127,11 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
                 $wpdb->insert( $table, $data, $format );
                 $wpdb->insert_id;
 			}
+		}
+
+		public function showForm()
+		{
+
 		}
 
 

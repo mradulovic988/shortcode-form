@@ -88,6 +88,8 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2020-08-08
 ### Added
 - Added on both admin page welcome div
+- AJAX done
+- AJAX validation done
 
 ### Changed
 - Changed order from selecting data from the database from ASC to DESC

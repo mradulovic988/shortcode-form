@@ -92,6 +92,7 @@ All notable changes to this project will be documented in this file.
 - AJAX validation done
 - Added minimal design for the form on the front-end
 - Added shortcode [form_user_list] for the front-end
+- Created class Scf_SettingLinks for setting links
 
 ### Changed
 - Changed order from selecting data from the database from ASC to DESC

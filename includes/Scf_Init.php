@@ -54,7 +54,8 @@ if ( !class_exists( 'Scf_Init' ) ) {
                 Base\Scf_Enqueue::class,
                 Pages\Scf_Admin::class,
 	            Base\Scf_Shortcodes::class,
-	            Base\Scf_Functions::class
+	            Base\Scf_Functions::class,
+	            Base\Scf_SettingLinks::class
             ];
         }
 

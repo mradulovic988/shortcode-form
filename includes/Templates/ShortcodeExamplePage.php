@@ -14,6 +14,23 @@ namespace Inc\Templates;
 
 <div class="wrap">
     <h1 class="scf-wp-heading-inline"><?= __( 'Shortcodes Example', 'shortcode-form' ) ?></h1>
+
+    <div id="welcome-panel" class="welcome-panel">
+        <div class="welcome-panel-content">
+            <div class="welcome-panel-column-container">
+
+                <div class="welcome-panel-column">
+                    <h3><span class="dashicons dashicons-editor-code" aria-hidden="true"></span><?= __( 'Shortcode explanation', 'shortcode-form' ) ?></h3>
+
+                    <p><?= __( '- Shortcodes which is inside the column \'Shortcode\' you can simply add on every place on your website. From any builder.', 'shortcode-form' ) ?></p>
+                    <p><?= __( '- Shortcodes which is inside the column \'Shortcode for template file\' you can add on every template files inside your theme.', 'shortcode-form' ) ?></p>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <table class="widefat fixed" cellspacing="0">
         <thead>
         <tr>

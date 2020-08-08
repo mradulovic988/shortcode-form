@@ -21,14 +21,13 @@ if ( !class_exists( 'Scf_Functions' ) ) {
 	 * @package    Inc\Base
 	 * @author     Marko Radulovic <mradulovic988@gmail.com>
 	 */
-	class Scf_Functions {
-
-		public function __construct()
-		{}
+	class Scf_Functions
+	{
 
 		/**
 		 * Collect data from the database
-		 * and place it into Users List page
+		 * pagionate them and place it
+		 * into Users List page
 		 *
 		 * @package collectData
 		 * @author Marko Radulovic <mradulovic988@gmail.com>
@@ -37,20 +36,39 @@ if ( !class_exists( 'Scf_Functions' ) ) {
 		{
 			global $wpdb;
 
-			$pullDatas = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}shortcode_form");
+			$query              = "SELECT * FROM {$wpdb->prefix}shortcode_form";
+			$total_query        = "SELECT COUNT(1) FROM (${query}) AS combined_table";
+			$total              = $wpdb->get_var( $total_query );
+			$itemsPerPage     = 10;
+			$page               = isset( $_GET[ 'cpage' ] ) ? abs( ( int ) $_GET[ 'cpage' ] ) : 1;
+			$offset             = ( $page * $itemsPerPage ) - $itemsPerPage;
+			$results            = $wpdb->get_results( $query . " ORDER BY id DESC LIMIT ${offset}, ${itemsPerPage}" );
 
-			$columnNumber = 1;
-
-			foreach ( $pullDatas as $pulData ) {
+			foreach ( $results as $result ) {
 
 				echo '<tr class="alternate">';
-	            echo '<td class="column-columnname">' . $columnNumber++ . '.</td>';
-	            echo '<td class="column-columnname">' . $pulData->first_name . '</td>';
-	            echo '<td class="column-columnname">' . $pulData->last_name . '</td>';
-	            echo '<th class="column-columnname">' . $pulData->email . '</th>';
-	            echo '<td class="column-columnname">' . $pulData->subject . '</td>';
-		        echo '</tr>';
+				echo '<td class="column-columnname scf">' . $result->first_name . '</td>';
+				echo '<td class="column-columnname scf">' . $result->last_name . '</td>';
+				echo '<td class="column-columnname scf">' . $result->email . '</td>';
+				echo '<td class="column-columnname scf">' . $result->subject . '</td>';
+				echo '</tr>';
 			}
+
+			$customPagHtml      = "";
+			$totalPage          = ceil( $total / $itemsPerPage );
+
+			if( $totalPage > 1 ) {
+				$customPagHtml =  '<div class="scf_pagination"><span>Page ' . $page . ' of ' . $totalPage . '</span> </div><div class="scf_pagination_page"> ' . paginate_links( [
+					'base' => add_query_arg( 'cpage', '%#%' ),
+					'format' => '',
+					'prev_text' => __( '&laquo; Previous' ),
+					'next_text' => __( 'Next &raquo;' ),
+					'total' => $totalPage,
+					'current' => $page
+				] ).'</div>';
+			}
+
+			return $customPagHtml;
 		}
 
 	}

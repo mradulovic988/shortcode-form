@@ -50,8 +50,8 @@ if ( !class_exists( 'Scf_Admin' ) ) {
 
             add_submenu_page(
                 'scf_shortcode_form',
-                'Users List',
-                'Users List',
+                'Form Subscriptions',
+                'Form Subscriptions',
                 'manage_options',
                 'scf_shortcode_form',
                 [

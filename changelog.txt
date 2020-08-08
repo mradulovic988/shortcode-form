@@ -84,3 +84,26 @@ All notable changes to this project will be documented in this file.
 -
 
 #####################################################################
+
+## [1.0.0] - 2020-08-08
+### Added
+- Added on both admin page welcome div
+
+### Changed
+- Changed order from selecting data from the database from ASC to DESC
+- Users List page to Form Subscriptions
+- Added pagination on the admin page with method collectData()
+
+### Removed
+-
+
+### Fixed
+-
+
+### Bugs
+-
+
+### To proceed
+-
+
+#####################################################################

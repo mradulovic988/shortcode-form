@@ -91,6 +91,7 @@ All notable changes to this project will be documented in this file.
 - AJAX done
 - AJAX validation done
 - Added minimal design for the form on the front-end
+- Added shortcode [form_user_list] for the front-end
 
 ### Changed
 - Changed order from selecting data from the database from ASC to DESC
@@ -107,6 +108,6 @@ All notable changes to this project will be documented in this file.
 -
 
 ### To proceed
--
+- Proceed with [form_user_list] and create a pagination
 
 #####################################################################

@@ -42,3 +42,15 @@ body.loading .ajax-loader {
 .buttonGif {
     display: inline-flex;
 }
+
+input.ScfFirstName,
+input.ScfLastName,
+input.ScfEmail,
+input.ScfSubject,
+input.ScfMessage {
+    width: 100%;
+}
+
+.ScfWrapper {
+    width: 100%;
+}

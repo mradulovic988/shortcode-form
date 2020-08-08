@@ -44,31 +44,36 @@ if ( !class_exists( 'Scf_Functions' ) ) {
 			$offset             = ( $page * $itemsPerPage ) - $itemsPerPage;
 			$results            = $wpdb->get_results( $query . " ORDER BY id DESC LIMIT ${offset}, ${itemsPerPage}" );
 
-			foreach ( $results as $result ) {
+			if ( $total == 0 ) {
+				echo '<h3>' . __( 'You don\'t have any submitted information yet.', 'shortcode-form' ) . '</h3>';
+			} else {
 
-				echo '<tr class="alternate">';
-				echo '<td class="column-columnname scf">' . $result->first_name . '</td>';
-				echo '<td class="column-columnname scf">' . $result->last_name . '</td>';
-				echo '<td class="column-columnname scf">' . $result->email . '</td>';
-				echo '<td class="column-columnname scf">' . $result->subject . '</td>';
-				echo '</tr>';
+				foreach ( $results as $result ) {
+
+					echo '<tr class="alternate">';
+					echo '<td class="column-columnname scf">' . $result->first_name . '</td>';
+					echo '<td class="column-columnname scf">' . $result->last_name . '</td>';
+					echo '<td class="column-columnname scf">' . $result->email . '</td>';
+					echo '<td class="column-columnname scf">' . $result->subject . '</td>';
+					echo '</tr>';
+				}
+
+				$customPagHtml      = "";
+				$totalPage          = ceil( $total / $itemsPerPage );
+
+				if( $totalPage > 1 ) {
+					$customPagHtml =  '<div class="scf_pagination"><span>Page ' . $page . ' of ' . $totalPage . '</span> </div><div class="scf_pagination_page"> ' . paginate_links( [
+							'base' => add_query_arg( 'cpage', '%#%' ),
+							'format' => '',
+							'prev_text' => __( '&laquo; Previous' ),
+							'next_text' => __( 'Next &raquo;' ),
+							'total' => $totalPage,
+							'current' => $page
+						] ).'</div>';
+				}
+
+				return $customPagHtml;
 			}
-
-			$customPagHtml      = "";
-			$totalPage          = ceil( $total / $itemsPerPage );
-
-			if( $totalPage > 1 ) {
-				$customPagHtml =  '<div class="scf_pagination"><span>Page ' . $page . ' of ' . $totalPage . '</span> </div><div class="scf_pagination_page"> ' . paginate_links( [
-					'base' => add_query_arg( 'cpage', '%#%' ),
-					'format' => '',
-					'prev_text' => __( '&laquo; Previous' ),
-					'next_text' => __( 'Next &raquo;' ),
-					'total' => $totalPage,
-					'current' => $page
-				] ).'</div>';
-			}
-
-			return $customPagHtml;
 		}
 
 	}

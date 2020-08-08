@@ -65,20 +65,31 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		{
 			return '<h4>' . __( 'Submit your feedback', 'shortcode-form' ) . '</h4>
 				<form id="ScfForm" method="post" name="ScfForm" enctype="multipart/form-data" target="iframe">
-	
+				
+				<div class="ScfWrapper">
 				<label for="ScfFirstName">' . __( 'First Name', 'shortcode-form' ) . '</label><span id="firstName-info" class="info"></span>
 				<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '" required>
+				</div>
+				
+				<div class="ScfWrapper">
 				<label for="ScflastName">' . __( 'Last Name', 'shortcode-form' ) . '</label><span id="lastName-info" class="info"></span>
 				<input type="text" name="ScfLastName" id="ScfLastName" class="ScfLastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '" required>
-	
+				</div>
+				
+				<div class="ScfWrapper">
 				<label for="ScfEmail">' . __( 'Email', 'shortcode-form' ) . '</label><span id="email-info" class="info"></span>
 				<input type="email" name="ScfEmail" id="ScfEmail" class="ScfEmail" value="' . $this->loggedInUser( 'user_email' ) . '" placeholder="' . __( 'Email', 'shortcode-form' ) . '" required>
+				</div>
 	
+				<div class="ScfWrapper">
 				<label for="ScfSubject">' . __( 'Subject', 'shortcode-form' ) . '</label><span id="subject-info" class="info"></span>
 				<input type="text" name="ScfSubject" id="ScfSubject" class="ScfSubject" placeholder="' . __( 'Subject', 'shortcode-form' ) . '" required>
+				</div>
 	
+				<div class="ScfWrapper">
 				<label for="ScfMessage">' . __( 'Message', 'shortcode-form' ) . '</label><span id="message-info" class="info"></span>
-				<textarea id="ScfMessage" name="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '" required></textarea>
+				<textarea id="ScfMessage" name="ScfMessage" class="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '" required></textarea>
+				</div>
 	
 				<label for="ScfSubmit"></label>
 				<div class="buttonGif">
@@ -129,7 +140,11 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 			}
 		}
 
-		public function showForm()
+		/**
+		 * Showing form information on the front end
+		 * only for admin users
+		 */
+		public function showFormData()
 		{
 
 		}

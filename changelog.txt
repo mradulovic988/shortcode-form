@@ -90,6 +90,7 @@ All notable changes to this project will be documented in this file.
 - Added on both admin page welcome div
 - AJAX done
 - AJAX validation done
+- Added minimal design for the form on the front-end
 
 ### Changed
 - Changed order from selecting data from the database from ASC to DESC

@@ -23,7 +23,6 @@ namespace Inc\Templates;
                     <h3><span class="dashicons dashicons-editor-code" aria-hidden="true"></span><?= __( 'Shortcode explanation', 'shortcode-form' ) ?></h3>
 
                     <p><?= __( '- Shortcodes which is inside the column \'Shortcode\' you can simply add on every place on your website. From any builder.', 'shortcode-form' ) ?></p>
-                    <p><?= __( '- Shortcodes which is inside the column \'Shortcode for template file\' you can add on every template files inside your theme.', 'shortcode-form' ) ?></p>
                     <br>
                 </div>
 

@@ -116,11 +116,13 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2020-08-08
 ### Added
 - Created pagination for the show form shortcode
+- Added deactivation class Scf_Deactivate
 
 ### Changed
 - Changed README.md
 - Changed commenting on uninstall.php
 - Localization and translation
+- Fixed structure, typos and commenting
 
 ### Removed
 -

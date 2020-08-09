@@ -1,150 +1,159 @@
-# Translating for the Shorcode form plugin
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Marko Radulovic
 # This file is distributed under the same license as the PACKAGE package.
 # Marko Radulovic <mradulovic988@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Marko Radulovic 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 18:03+0200\n"
-"PO-Revision-Date: 2020-08-09 18.05+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-08-09 18:16+0200\n"
+"PO-Revision-Date: 2020-08-09 18:35+0200\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Eazy Po 0.9.5.3\n"
+"X-Generator: Poedit 2.4\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
 
 #: includes/Base/Scf_Functions.php:48 includes/Base/Scf_Shortcodes.php:167
 msgid "You don't have any submitted information yet."
-msgstr ""
+msgstr "Sie haben noch keine Informationen übermittelt."
 
 #: includes/Base/Scf_Functions.php:68 includes/Base/Scf_Shortcodes.php:214
 msgid "&laquo; Previous"
-msgstr ""
+msgstr "&laquo; Bisherige"
 
 #: includes/Base/Scf_Functions.php:69 includes/Base/Scf_Shortcodes.php:215
 msgid "Next &raquo;"
-msgstr ""
+msgstr "Nächster &raquo;"
 
 #: includes/Base/Scf_SettingLinks.php:37
 msgid "Settings"
-msgstr ""
+msgstr "die Einstellungen"
 
 #: includes/Base/Scf_Shortcodes.php:67
 msgid "Submit your feedback"
-msgstr ""
+msgstr "Senden Sie Ihr Feedback"
 
 #: includes/Base/Scf_Shortcodes.php:71 includes/Base/Scf_Shortcodes.php:72
-#: includes/Base/Scf_Shortcodes.php:181
-#: includes/Templates/UsersListPage.php:41
+#: includes/Base/Scf_Shortcodes.php:181 includes/Templates/UsersListPage.php:41
 #: includes/Templates/UsersListPage.php:50
 msgid "First Name"
-msgstr ""
+msgstr "Vorname"
 
 #: includes/Base/Scf_Shortcodes.php:76 includes/Base/Scf_Shortcodes.php:77
-#: includes/Base/Scf_Shortcodes.php:182
-#: includes/Templates/UsersListPage.php:42
+#: includes/Base/Scf_Shortcodes.php:182 includes/Templates/UsersListPage.php:42
 #: includes/Templates/UsersListPage.php:51
 msgid "Last Name"
-msgstr ""
+msgstr "Nachname"
 
 #: includes/Base/Scf_Shortcodes.php:81 includes/Base/Scf_Shortcodes.php:82
-#: includes/Base/Scf_Shortcodes.php:183
-#: includes/Templates/UsersListPage.php:43
+#: includes/Base/Scf_Shortcodes.php:183 includes/Templates/UsersListPage.php:43
 #: includes/Templates/UsersListPage.php:52
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: includes/Base/Scf_Shortcodes.php:86 includes/Base/Scf_Shortcodes.php:87
-#: includes/Base/Scf_Shortcodes.php:184
-#: includes/Templates/UsersListPage.php:44
+#: includes/Base/Scf_Shortcodes.php:184 includes/Templates/UsersListPage.php:44
 #: includes/Templates/UsersListPage.php:53
 msgid "Subject"
-msgstr ""
+msgstr "Gegenstand"
 
 #: includes/Base/Scf_Shortcodes.php:91 includes/Base/Scf_Shortcodes.php:92
 msgid "Message"
-msgstr ""
+msgstr "Botschaft"
 
 #: includes/Base/Scf_Shortcodes.php:97
 msgid "Submit"
-msgstr ""
+msgstr "Einreichen"
 
 #: includes/Base/Scf_Shortcodes.php:195
 msgid "First Name: "
-msgstr ""
+msgstr "Vorname"
 
 #: includes/Base/Scf_Shortcodes.php:196
 msgid "Last Name: "
-msgstr ""
+msgstr "Nachname"
 
 #: includes/Base/Scf_Shortcodes.php:197
 msgid "Email: "
-msgstr ""
+msgstr "Email: "
 
 #: includes/Base/Scf_Shortcodes.php:198
 msgid "Subject: "
-msgstr ""
+msgstr "Gegenstand"
 
 #: includes/Base/Scf_Shortcodes.php:199
 msgid "Message: "
-msgstr ""
+msgstr "Botschaft"
+
+#: includes/Pages/Scf_Admin.php:40 includes/Pages/Scf_Admin.php:41
+msgid "Shortcode Form"
+msgstr "Shortcode-Formular"
+
+#: includes/Pages/Scf_Admin.php:53 includes/Pages/Scf_Admin.php:54
+#: includes/Templates/UsersListPage.php:21
+msgid "Form Subscriptions"
+msgstr "Formularabonnements"
+
+#: includes/Pages/Scf_Admin.php:64 includes/Pages/Scf_Admin.php:65
+msgid "Shortcode Examples"
+msgstr "Shortcode-Beispiele"
 
 #: includes/Templates/ShortcodeExamplePage.php:16
 msgid "Shortcodes Example"
-msgstr ""
+msgstr "Beispiel für Shortcodes"
 
 #: includes/Templates/ShortcodeExamplePage.php:23
 msgid "Shortcode explanation"
-msgstr ""
+msgstr "Erklärung des Shortcodes"
 
 #: includes/Templates/ShortcodeExamplePage.php:25
 msgid ""
 "- Shortcodes which is inside the column 'Shortcode' you can simply add on "
 "every place on your website. From any builder."
 msgstr ""
+"- Shortcodes, die sich in der Spalte 'Shortcode' befinden, können Sie "
+"einfach an jeder Stelle Ihrer Website hinzufügen. Von jedem Baumeister."
 
 #: includes/Templates/ShortcodeExamplePage.php:26
 msgid ""
 "- Shortcodes which is inside the column 'Shortcode for template file' you "
 "can add on every template files inside your theme."
 msgstr ""
+"- Shortcodes in der Spalte \"Shortcode für Vorlagendatei\" können Sie zu "
+"allen Vorlagendateien in Ihrem Design hinzufügen."
 
 #: includes/Templates/ShortcodeExamplePage.php:37
 #: includes/Templates/ShortcodeExamplePage.php:46
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: includes/Templates/ShortcodeExamplePage.php:38
 #: includes/Templates/ShortcodeExamplePage.php:47
 msgid "Shortcode"
-msgstr ""
+msgstr "Shortcode"
 
 #: includes/Templates/ShortcodeExamplePage.php:39
 #: includes/Templates/ShortcodeExamplePage.php:48
 msgid "Shortcode for template file"
-msgstr ""
+msgstr "Shortcode für Vorlagendatei"
 
 #: includes/Templates/ShortcodeExamplePage.php:55
 msgid "To show form anywhere on your website"
-msgstr ""
+msgstr "Form überall auf Ihrer Website anzeigen"
 
 #: includes/Templates/ShortcodeExamplePage.php:67
 msgid "To list all of the users anywhere on the website"
-msgstr ""
-
-#: includes/Templates/UsersListPage.php:21
-msgid "Form Subscriptions"
-msgstr ""
+msgstr "Um alle Benutzer irgendwo auf der Website aufzulisten"
 
 #: includes/Templates/UsersListPage.php:28
 msgid "Form Subscriptions Explanation"
-msgstr ""
+msgstr "Erklärung zu Formularabonnements"
 
 #: includes/Templates/UsersListPage.php:30
 msgid "- Here you can find all of the data from your subscription form."
-msgstr ""
+msgstr "- Hier finden Sie alle Daten aus Ihrem Anmeldeformular."

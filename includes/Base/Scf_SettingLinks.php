@@ -35,7 +35,7 @@ if ( !class_exists( 'Scf_SettingLinks' ) ) {
 		public function settingsLink($links)
 		{
 			$settingLink = '<a href="admin.php?page=scf_shortcode_form">' . __( 'Settings', 'shortcode-form' ) . '</a>';
-			array_push($links, $settingLink);
+			array_push( $links, $settingLink );
 			return $links;
 		}
 	}

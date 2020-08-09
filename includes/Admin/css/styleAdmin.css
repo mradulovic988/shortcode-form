@@ -1,40 +1,33 @@
 .widefat tfoot tr td, .widefat tfoot tr th, .widefat thead tr td, .widefat thead tr th {
     font-weight: 600;
 }
-
 input.shortcodeExplain {
     width: 60%;
     border: none;
 }
-
 input.shortcodeExplain:focus {
     border-color: #007cba;
     box-shadow: 0 0 0 1px #007cba;
     outline: 2px solid transparent;
 }
-
 h1.scf-wp-heading-inline {
     margin-bottom: 20px;
 }
-
 .scf_pagination,
 .scf_pagination_page {
     margin-bottom: 10px;
     text-align: right;
     font-weight: 600;
 }
-
 span.page-numbers.current {
     border: 1px solid;
     padding: 1px 5px;
 }
-
 a.page-numbers {
     border: 1px solid;
     padding: 1px 5px;
     text-decoration: none;
 }
-
 td.column-columnname.scf {
     border-bottom: 1px solid #ccd0d4;
 }

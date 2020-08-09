@@ -1,6 +1,7 @@
 <?php
 /**
- * ScfAdmin class
+ * ScfAdmin class for listing all of the
+ * admin pages
  *
  * @link       www.samplelink.com
  * @since      1.0.0
@@ -14,7 +15,7 @@ namespace Inc\Pages;
 if ( !class_exists( 'Scf_Admin' ) ) {
 
     /**
-     * ScfAdmin class
+     * Scf_Admin class
      *
      * Class where we add all of the admins page
      *
@@ -37,8 +38,8 @@ if ( !class_exists( 'Scf_Admin' ) ) {
         public function addAdminPages()
         {
             add_menu_page(
-                'Shortcode Form',
-                'Shortcode Form',
+                __( 'Shortcode Form', 'shortcode-form' ),
+	            __( 'Shortcode Form', 'shortcode-form' ),
                 'manage_options',
                 'scf_shortcode_form',
                 [
@@ -50,8 +51,8 @@ if ( !class_exists( 'Scf_Admin' ) ) {
 
             add_submenu_page(
                 'scf_shortcode_form',
-                'Form Subscriptions',
-                'Form Subscriptions',
+                __( 'Form Subscriptions', 'shortcode-form' ),
+	            __( 'Form Subscriptions', 'shortcode-form' ),
                 'manage_options',
                 'scf_shortcode_form',
                 [
@@ -61,8 +62,8 @@ if ( !class_exists( 'Scf_Admin' ) ) {
 
             add_submenu_page(
                 'scf_shortcode_form',
-                'Shortcode Examples',
-                'Shortcode Examples',
+                __( 'Shortcode Examples', 'shortcode-form' ),
+	            __( 'Shortcode Examples', 'shortcode-form' ),
                 'manage_options',
                 'scf_examples',
                 [

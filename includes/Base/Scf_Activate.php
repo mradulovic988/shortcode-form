@@ -14,7 +14,7 @@ namespace Inc\Base;
 if ( !class_exists( 'Scf_Activate' ) ) {
 
     /**
-     * SfActivate activation class
+     * Scf_Activate activation class
      *
      * Activation plugin
      *

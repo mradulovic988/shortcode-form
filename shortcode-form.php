@@ -1,17 +1,11 @@
 <?php
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * Admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
  * @link              www.samplelink.com
  * @since             1.0.0
  * @package           shortcode-form
  *
  * @wordpress-plugin
+ *
  * Plugin Name:       Shortcode Form
  * Plugin URI:        www.samplelink.com
  * Description:       Plugin for displaying form anywhere on the website with the shortcode, and collecting data from it.
@@ -24,7 +18,7 @@
  * Domain Path:       /languages
  */
 
-defined('ABSPATH') or die('You can not access here.');
+defined( 'ABSPATH' ) or die( 'You can not access here.' );
 
 /**
  * Including autoload.php from composer
@@ -55,7 +49,10 @@ if ( !function_exists( 'activate' ) ) {
  * The code that runs during plugin deactivation
  */
 if ( !function_exists( 'deactivate' ) ) {
-    function deactivate(){}
+    function deactivate()
+    {
+    	Inc\Base\Scf_Deactivate::deactivate();
+    }
 }
 
 

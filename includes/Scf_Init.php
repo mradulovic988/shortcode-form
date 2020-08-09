@@ -52,6 +52,7 @@ if ( !class_exists( 'Scf_Init' ) ) {
         {
             return [
                 Base\Scf_Activate::class,
+                Base\Scf_Deactivate::class,
                 Base\Scf_Enqueue::class,
                 Pages\Scf_Admin::class,
 	            Base\Scf_Shortcodes::class,
@@ -68,10 +69,10 @@ if ( !class_exists( 'Scf_Init' ) ) {
          */
         public static function registerServices()
         {
-            foreach (self::getServices() as $class) {
-                $service = self::instantiate($class);
+            foreach ( self::getServices() as $class ) {
+                $service = self::instantiate( $class );
 
-                if (method_exists($service, 'register')) {
+                if ( method_exists( $service, 'register' ) ) {
                     $service->register();
                 }
             }
@@ -90,7 +91,7 @@ if ( !class_exists( 'Scf_Init' ) ) {
         }
 
 	    public function translationReady() {
-		    load_plugin_textdomain( 'shortcode-form', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		    load_plugin_textdomain( 'shortcode-form', false, PLUGIN . '/languages' );
 	    }
     }
 }

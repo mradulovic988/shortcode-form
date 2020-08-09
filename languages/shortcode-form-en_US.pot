@@ -1,16 +1,16 @@
-# Translating for the Shorcode form plugin
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Marko Radulovic
 # This file is distributed under the same license as the PACKAGE package.
 # Marko Radulovic <mradulovic988@gmail.com>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Marko Radulovic 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 18:03+0200\n"
+"POT-Creation-Date: 2020-08-09 18:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Marko Radulovic <mradulovic988@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -93,6 +93,19 @@ msgstr ""
 msgid "Message: "
 msgstr ""
 
+#: includes/Pages/Scf_Admin.php:40 includes/Pages/Scf_Admin.php:41
+msgid "Shortcode Form"
+msgstr ""
+
+#: includes/Pages/Scf_Admin.php:53 includes/Pages/Scf_Admin.php:54
+#: includes/Templates/UsersListPage.php:21
+msgid "Form Subscriptions"
+msgstr ""
+
+#: includes/Pages/Scf_Admin.php:64 includes/Pages/Scf_Admin.php:65
+msgid "Shortcode Examples"
+msgstr ""
+
 #: includes/Templates/ShortcodeExamplePage.php:16
 msgid "Shortcodes Example"
 msgstr ""
@@ -134,10 +147,6 @@ msgstr ""
 
 #: includes/Templates/ShortcodeExamplePage.php:67
 msgid "To list all of the users anywhere on the website"
-msgstr ""
-
-#: includes/Templates/UsersListPage.php:21
-msgid "Form Subscriptions"
 msgstr ""
 
 #: includes/Templates/UsersListPage.php:28

@@ -28,7 +28,7 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		public function __construct()
 		{
 			add_shortcode( 'form_inquiry', [ $this, 'ScfForm' ] );
-			add_shortcode( 'form_user_list', [ $this, 'showFormData' ] );
+			add_shortcode( 'form_user_list', [ $this, 'showFormDataPag' ] );
 			$this->sendToDatabase();
 		}
 
@@ -144,42 +144,82 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		/**
 		 * Showing form information on the front end
 		 * only for admin users
+		 *
+		 * @return mixed
 		 */
-		public function showFormData()
+		public function showFormDataPag()
 		{
-			/**
-			 * Show only if it's the user administrator
-			 */
 			if ( current_user_can( 'administrator' ) ) {
 
 				global $wpdb;
-				$showForm = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'shortcode_form');
 
-				$data = '<div class="scf_formdata">';
-				$data .= '<table>';
-				$data .= '<tr>';
-				$data .= '<th>' . __( "First Name", "shortcode-form" ) . '</th>';
-				$data .= '<th>' . __( "Last Name", "shortcode-form" ) . '</th>';
-				$data .= '<th>' . __( "Email", "shortcode-form" ) . '</th>';
-				$data .= '<th>' . __( "Subject", "shortcode-form" ) . '</th>';
-				$data .= '</tr>';
+				$query        = "SELECT * FROM {$wpdb->prefix}shortcode_form";
+				$total_query  = "SELECT COUNT(1) FROM (${query}) AS combined_table";
+				$total        = $wpdb->get_var( $total_query );
+				$itemsPerPage = 10;
+				$page         = isset( $_GET['cpage'] ) ? abs( ( int ) $_GET['cpage'] ) : 1;
+				$offset       = ( $page * $itemsPerPage ) - $itemsPerPage;
+				$results      = $wpdb->get_results( $query . " ORDER BY id DESC LIMIT ${offset}, ${itemsPerPage}" );
+
+				if ( $total == 0 ) {
+					echo '<h3>' . __( 'You don\'t have any submitted information yet.', 'shortcode-form' ) . '</h3>';
+				} else {
+
+					$customPagHtml = "";
+
+					$customPagHtml .= '<div class="scf_show_form_wrapper"><div>';
+
+					foreach ( $results as $result ) {
+
+						$customPagHtml .= '<ul class="accordion">';
+						$customPagHtml .= '<li>';
+						$customPagHtml .= '<a class="toggle" href="javascript:void(0);">';
+						$customPagHtml .= '<table class="scf_show_form_table">';
+						$customPagHtml .= '<tr>';
+						$customPagHtml .= '<th>' . __( 'First Name', 'shortcode-form' ) . '</th>';
+						$customPagHtml .= '<th>' . __( 'Last Name', 'shortcode-form' ) . '</th>';
+						$customPagHtml .= '<th>' . __( 'Email', 'shortcode-form' ) . '</th>';
+						$customPagHtml .= '<th>' . __( 'Subject', 'shortcode-form' ) . '</th>';
+						$customPagHtml .= '</tr>';
+						$customPagHtml .= '<tr>';
+						$customPagHtml .= '<td>' . $result->first_name . '</td>';
+						$customPagHtml .= '<td>' . $result->last_name . '</td>';
+						$customPagHtml .= '<td>' . $result->email . '</td>';
+						$customPagHtml .= '<td>' . $result->subject . '</td>';
+						$customPagHtml .= '</tr>';
+						$customPagHtml .= '</table></a>';
+
+						$customPagHtml .= '<ul class="inner">';
+						$customPagHtml .= '<li>- ' . __( 'First Name: ', 'shortcode-form' ) . $result->first_name . '</li>';
+						$customPagHtml .= '<li>- ' . __( 'Last Name: ', 'shortcode-form' ) . $result->last_name . '</li>';
+						$customPagHtml .= '<li>- ' . __( 'Email: ', 'shortcode-form' ) . $result->email . '</li>';
+						$customPagHtml .= '<li>- ' . __( 'Subject: ', 'shortcode-form' ) . $result->subject . '</li>';
+						$customPagHtml .= '<li>- ' . __( 'Message: ', 'shortcode-form' ) . $result->message . '</li>';
+						$customPagHtml .= '</ul>';
+						$customPagHtml .= '</li>';
+						$customPagHtml .= '</ul>';
+					}
+
+					$customPagHtml .= '</div>';
 
 
-				foreach ( $showForm as $form ) {
+					$totalPage = ceil( $total / $itemsPerPage );
 
-					$data .= '<tr class="alternate">';
-					$data .= '<td class="column-columnname scf">' . $form->first_name . '</td>';
-					$data .= '<td class="column-columnname scf">' . $form->last_name . '</td>';
-					$data .= '<td class="column-columnname scf">' . $form->email . '</td>';
-					$data .= '<td class="column-columnname scf">' . $form->subject . '</td>';
-					$data .= '</tr>';
+					if ( $totalPage > 1 ) {
+						$customPagHtml .= '<div class="scf_show_form_inner_wrapper"> <div class="scf_pagination_show_form"><span>Page ' . $page . ' of ' . $totalPage . '</span> </div><div class="scf_pagination_page_show_form"> ' . paginate_links( [
+								'base'      => add_query_arg( 'cpage', '%#%' ),
+								'format'    => '',
+								'prev_text' => __( '&laquo; Previous' ),
+								'next_text' => __( 'Next &raquo;' ),
+								'total'     => $totalPage,
+								'current'   => $page
+							] ) . '</div></div></div>';
+					}
+
+					return $customPagHtml;
 				}
-
-				$data .= '</table>';
-				$data .= '</div>';
-
-				return $data;
 			}
 		}
+
 	}
 }

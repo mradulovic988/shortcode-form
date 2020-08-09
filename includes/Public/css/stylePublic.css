@@ -55,31 +55,63 @@ input.ScfMessage {
     width: 100%;
 }
 
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-    background-color: #ccc;
-}
-
-.panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
+.inner {
     overflow: hidden;
+    display: none;
+
 }
 
-div.scf_formdata {
-    overflow-y: scroll;
-    height: 500px;
+a.toggle {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    color: #000;
+    padding: .75em;
+    border-radius: 0.15em;
+    transition: background .3s ease;
+
+}
+
+.accordion li {
+    background: #fff;
+    margin: 3px;
+}
+
+ul.accordion {
+    list-style-type: none;
+}
+
+ul.accordion {
+    list-style-type: none;
+    margin: 0;
+}
+
+.scf_formdata {
+    border: 3px solid #fff;
+    padding: 5px;
+}
+
+.scf_show_form_wrapper {
+    border: 3px solid #fff;
+    padding: 7px;
+}
+
+.scf_show_form_inner_wrapper {
+    padding: 10px;
+    width: 99%;
+    background: #fff;
+    margin: 0 auto;
+}
+
+table.scf_show_form_table {
+    margin: 0;
+}
+
+table.scf_show_form_table th,
+table.scf_show_form_table td {
+    font-size: 12px;
+}
+
+ul.inner li {
+    font-size: 12px;
 }

@@ -112,3 +112,24 @@ All notable changes to this project will be documented in this file.
 - Proceed with [form_user_list] and create a pagination
 
 #####################################################################
+
+## [1.0.0] - 2020-08-08
+### Added
+- Created pagination for the show form shortcode
+
+### Changed
+-
+
+### Removed
+-
+
+### Fixed
+-
+
+### Bugs
+-
+
+### To proceed
+-
+
+#####################################################################

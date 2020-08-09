@@ -1,4 +1,8 @@
 jQuery( function( $ ) {
+
+    /**
+     * Ajax call for submitting a form
+     */
     $( "#ScfSubmit" ).click( function () {
 
         $body = $("body");
@@ -38,42 +42,73 @@ jQuery( function( $ ) {
                     }, 2000);
                 },
 
-                error: function () {
-                }
-
+                error: function () {}
             });
         }
     });
 
+    /**
+     * Validation of the forms fields
+     *
+     * @returns {boolean}
+     */
     function validateContact() {
+
         var valid = true;
-        $(".demoInputBox").css('background-color','');
-        $(".info").html('');
-        if(!$("#ScfFirstName").val()) {
-            $("#firstName-info").html("This field is required.");
-            $("#ScfFirstName").css('background-color','#FFFFDF');
+        $( ".demoInputBox" ).css( 'background-color', '' );
+        $( ".info" ).html( '' );
+
+        if( !$( "#ScfFirstName" ).val() ) {
+            $( "#firstName-info" ).html( "This field is required." );
+            $( "#ScfFirstName" ).css( 'background-color', '#FFFFDF' );
             valid = false;
         }
-        if(!$("#ScfLastName").val()) {
-            $("#lastName-info").html("This field is required.");
-            $("#ScfLastName").css('background-color','#FFFFDF');
+
+        if( !$( "#ScfLastName" ).val() ) {
+            $( "#lastName-info" ).html( "This field is required." );
+            $( "#ScfLastName" ).css( 'background-color', '#FFFFDF' );
             valid = false;
         }
-        if(!$("#ScfEmail").val()) {
-            $("#email-info").html("You need to enter valid E-mail address.");
-            $("#ScfEmail").css('background-color','#FFFFDF');
+
+        if( !$( "#ScfEmail" ).val() ) {
+            $( "#email-info" ).html( "You need to enter valid E-mail address." );
+            $( "#ScfEmail" ).css( 'background-color', '#FFFFDF' );
             valid = false;
         }
-        if(!$("#ScfSubject").val()) {
-            $("#subject-info").html("This field is required.");
-            $("#ScfSubject").css('background-color','#FFFFDF');
+
+        if( !$( "#ScfSubject" ).val() ) {
+            $( "#subject-info" ).html( "This field is required." );
+            $( "#ScfSubject" ).css( 'background-color', '#FFFFDF' );
             valid = false;
         }
-        if(!$("#ScfMessage").val()) {
-            $("#message-info").html("This field is required.");
-            $("#ScfMessage").css('background-color','#FFFFDF');
+
+        if( !$( "#ScfMessage" ).val() ) {
+            $( "#message-info" ).html( "This field is required." );
+            $( "#ScfMessage" ).css( 'background-color', '#FFFFDF' );
             valid = false;
         }
+
         return valid;
     }
+
+    /**
+     * Accordian of the front-end form
+     */
+    $( '.toggle' ).click( function( e ) {
+
+        e.preventDefault();
+
+        var $this = $( this );
+
+        if ( $this.next().hasClass( 'show' ) ) {
+            $this.next().removeClass( 'show' );
+            $this.next().slideUp( 350 );
+        } else {
+            $this.parent().parent().find( 'li .inner' ).removeClass( 'show' );
+            $this.parent().parent().find( 'li .inner' ).slideUp( 350 );
+            $this.next().toggleClass( 'show' );
+            $this.next().slideToggle( 350 );
+        }
+    });
+
 });

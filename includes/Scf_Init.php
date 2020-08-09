@@ -90,7 +90,7 @@ if ( !class_exists( 'Scf_Init' ) ) {
         }
 
 	    public function translationReady() {
-		    load_plugin_textdomain( 'shortcode-form', false, '/languages' );
+		    load_plugin_textdomain( 'shortcode-form', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	    }
     }
 }

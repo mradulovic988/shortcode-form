@@ -64,44 +64,46 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 		 */
 		public function ScfForm()
 		{
-			return '<h4>' . __( 'Submit your feedback', 'shortcode-form' ) . '</h4>
-				<form id="ScfForm" method="post" name="ScfForm" enctype="multipart/form-data" target="iframe">
-				
-					<div class="ScfWrapper">
-						<label for="ScfFirstName">' . __( 'First Name', 'shortcode-form' ) . '</label><span id="firstName-info" class="info"></span>
-						<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '" required>
-					</div>
-					
-					<div class="ScfWrapper">
-						<label for="ScflastName">' . __( 'Last Name', 'shortcode-form' ) . '</label><span id="lastName-info" class="info"></span>
-						<input type="text" name="ScfLastName" id="ScfLastName" class="ScfLastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '" required>
-					</div>
-					
-					<div class="ScfWrapper">
-						<label for="ScfEmail">' . __( 'Email', 'shortcode-form' ) . '</label><span id="email-info" class="info"></span>
-						<input type="email" name="ScfEmail" id="ScfEmail" class="ScfEmail" value="' . $this->loggedInUser( 'user_email' ) . '" placeholder="' . __( 'Email', 'shortcode-form' ) . '" required>
-					</div>
-		
-					<div class="ScfWrapper">
-						<label for="ScfSubject">' . __( 'Subject', 'shortcode-form' ) . '</label><span id="subject-info" class="info"></span>
-						<input type="text" name="ScfSubject" id="ScfSubject" class="ScfSubject" placeholder="' . __( 'Subject', 'shortcode-form' ) . '" required>
-					</div>
-		
-					<div class="ScfWrapper">
-						<label for="ScfMessage">' . __( 'Message', 'shortcode-form' ) . '</label><span id="message-info" class="info"></span>
-						<textarea id="ScfMessage" name="ScfMessage" class="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '" required></textarea>
-					</div>
-		
-					<label for="ScfSubmit"></label>
-						<div class="buttonGif">
-						<button type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit">' . __( 'Submit', 'shortcode-form' ) . '</button>
-						<img class="ajax-loader" src="'.plugins_url( '../Public/images/loading.gif', __FILE__ ).'"/>
-					</div>
-					
-					<div id="showMessage"></div>
-	
-				</form>
-				<iframe name="iframe" id="iframe" style="display:none" ></iframe>';
+			$data = '<h4>' . __( 'Submit your feedback', 'shortcode-form' ) . '</h4>';
+			$data .= '<form id="ScfForm" method="post" name="ScfForm" enctype="multipart/form-data" target="iframe">';
+
+			$data .= '<div class="ScfWrapper">';
+			$data .= '<label for="ScfFirstName">' . __( 'First Name', 'shortcode-form' ) . '</label><span id="firstName-info" class="info"></span>';
+			$data .= '<input type="text" name="ScfFirstName" id="ScfFirstName" class="ScfFirstName" value="' . $this->loggedInUser( 'user_firstname' ) . '" placeholder="' . __( 'First Name', 'shortcode-form' ) . '" required>';
+			$data .= '</div>';
+
+			$data .= '<div class="ScfWrapper">';
+			$data .= '<label for="ScflastName">' . __( 'Last Name', 'shortcode-form' ) . '</label><span id="lastName-info" class="info"></span>';
+			$data .= '<input type="text" name="ScfLastName" id="ScfLastName" class="ScfLastName" value="' . $this->loggedInUser( 'user_lastname' ) . '" placeholder="' . __( 'Last Name', 'shortcode-form' ) . '" required>';
+			$data .= '</div>';
+
+			$data .= '<div class="ScfWrapper">';
+			$data .= '<label for="ScfEmail">' . __( 'Email', 'shortcode-form' ) . '</label><span id="email-info" class="info"></span>';
+			$data .= '<input type="email" name="ScfEmail" id="ScfEmail" class="ScfEmail" value="' . $this->loggedInUser( 'user_email' ) . '" placeholder="' . __( 'Email', 'shortcode-form' ) . '" required>';
+			$data .= '</div>';
+
+			$data .= '<div class="ScfWrapper">';
+			$data .= '<label for="ScfSubject">' . __( 'Subject', 'shortcode-form' ) . '</label><span id="subject-info" class="info"></span>';
+			$data .= '<input type="text" name="ScfSubject" id="ScfSubject" class="ScfSubject" placeholder="' . __( 'Subject', 'shortcode-form' ) . '" required>';
+			$data .= '</div>';
+
+			$data .= '<div class="ScfWrapper">';
+			$data .= '<label for="ScfMessage">' . __( 'Message', 'shortcode-form' ) . '</label><span id="message-info" class="info"></span>';
+			$data .= '<textarea id="ScfMessage" name="ScfMessage" class="ScfMessage" rows="4" cols="50" placeholder="' . __( 'Message', 'shortcode-form' ) . '" required></textarea>';
+			$data .= '</div>';
+
+			$data .= '<label for="ScfSubmit"></label>';
+			$data .= '<div class="buttonGif">';
+			$data .= '<button type="submit" name="ScfSubmit" id="ScfSubmit" class="ScfSubmit">' . __( 'Submit', 'shortcode-form' ) . '</button>';
+			$data .= '<img class="ajax-loader" src="'.plugins_url( '../Public/images/loading.gif', __FILE__ ).'"/>';
+			$data .= '</div>';
+
+			$data .= '<div id="showMessage"></div>';
+
+			$data .= '</form>';
+			$data .= '<iframe name="iframe" id="iframe" style="display:none"></iframe>';
+
+			return $data;
 		}
 
 		/**

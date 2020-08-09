@@ -118,7 +118,8 @@ All notable changes to this project will be documented in this file.
 - Created pagination for the show form shortcode
 
 ### Changed
--
+- Changed README.md
+- Changed commenting on uninstall.php
 
 ### Removed
 -

@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Shortcode Form
  * Plugin URI:        www.samplelink.com
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress Admin area.
+ * Description:       Plugin for displaying form anywhere on the website with the shortcode, and collecting data from it.
  * Version:           1.0.0
  * Author:            Marko Radulovic <mradulovic988@gmail.com>
  * Author URI:        www.samplelink.com

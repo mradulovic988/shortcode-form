@@ -40,6 +40,7 @@ if ( !class_exists( 'Scf_Init' ) ) {
          */
         public function __construct()
         {
+	        add_action('init', [ $this, 'translationReady' ] );
         }
 
         /**
@@ -87,5 +88,9 @@ if ( !class_exists( 'Scf_Init' ) ) {
             $service = new $class();
             return $service;
         }
+
+	    public function translationReady() {
+		    load_plugin_textdomain( 'shortcode-form', false, '/languages' );
+	    }
     }
 }

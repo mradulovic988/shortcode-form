@@ -121,11 +121,11 @@ if ( !class_exists( 'Scf_Shortcodes' ) ) {
 
 				global $wpdb;
 
-				$ScfFirstName = $_POST['ScfFirstName'];
-                $ScfLastName = $_POST['ScfLastName'];
-                $ScfEmail = $_POST['ScfEmail'];
-                $ScfSubject = $_POST['ScfSubject'];
-                $ScfMessage = $_POST['ScfMessage'];
+				$ScfFirstName = sanitize_text_field( $_POST['ScfFirstName'] );
+                $ScfLastName = sanitize_text_field( $_POST['ScfLastName'] );
+                $ScfEmail = sanitize_email( $_POST['ScfEmail'] );
+                $ScfSubject = sanitize_text_field( $_POST['ScfSubject'] );
+                $ScfMessage = sanitize_text_field( $_POST['ScfMessage'] );
 
                 $table = $wpdb->prefix.'shortcode_form';
 

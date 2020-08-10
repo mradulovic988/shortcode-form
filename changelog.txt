@@ -113,7 +113,7 @@ All notable changes to this project will be documented in this file.
 
 #####################################################################
 
-## [1.0.0] - 2020-08-08
+## [1.0.0] - 2020-08-09
 ### Added
 - Created pagination for the show form shortcode
 - Added deactivation class Scf_Deactivate
@@ -123,6 +123,27 @@ All notable changes to this project will be documented in this file.
 - Changed commenting on uninstall.php
 - Localization and translation
 - Fixed structure, typos and commenting
+
+### Removed
+- Added class Scf_I18n for internationalization
+
+### Fixed
+-
+
+### Bugs
+-
+
+### To proceed
+-
+
+#####################################################################
+
+## [1.0.0] - 2020-08-10
+### Added
+-
+
+### Changed
+-
 
 ### Removed
 -

@@ -34,16 +34,6 @@ if ( !class_exists( 'Scf_Init' ) ) {
     {
 
         /**
-         * Initialize the class and set its properties.
-         *
-         * @since    1.0.0
-         */
-        public function __construct()
-        {
-	        add_action('init', [ $this, 'translationReady' ] );
-        }
-
-        /**
          * Store all the classes inside an array
          *
          * @return array Full list of classes
@@ -57,7 +47,8 @@ if ( !class_exists( 'Scf_Init' ) ) {
                 Pages\Scf_Admin::class,
 	            Base\Scf_Shortcodes::class,
 	            Base\Scf_Functions::class,
-	            Base\Scf_SettingLinks::class
+	            Base\Scf_SettingLinks::class,
+				Base\Scf_I18n::class
             ];
         }
 
@@ -89,9 +80,5 @@ if ( !class_exists( 'Scf_Init' ) ) {
             $service = new $class();
             return $service;
         }
-
-	    public function translationReady() {
-		    load_plugin_textdomain( 'shortcode-form', false, PLUGIN . '/languages' );
-	    }
     }
 }
